@@ -7,8 +7,9 @@ import React, { useState } from 'react';
 function App() {
   //TODO: STEP 2 - Establish your applictaion's state with some useState hooks.  You'll need one for the home score and another for the away score.
   let [homeScore, setHomeScore] = useState(0)
-
   let [awayScore, setAwayScore] = useState(0)
+  let [quarter, setQuarter] = useState(0)
+
   return (
     <div className="container">
       <section className="scoreboard">
@@ -26,7 +27,9 @@ function App() {
             <div className="away__score">{awayScore}</div>
           </div>
         </div>
-        <BottomRow />
+        <BottomRow
+        quarter={quarter}
+        setQuarter={setQuarter}/>
       </section>
       <section className="buttons">
         <div className="homeButtons">
